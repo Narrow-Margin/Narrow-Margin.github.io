@@ -170,8 +170,12 @@ footer {
 
 @font-face {
   font-family: Bebas;
-  src: url("../bebasneuepro-bold.woff") format("woff"),
-    url("../bebasneuepro-bold.woff2") format("woff2");
+  src: url("../bebasneuepro-bold.woff2") format("woff2"),
+       url("../bebasneuepro-bold.woff") format("woff"),
+       url("../bebasneuepro-bold.otf") format("opentype");
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
 }
 
 @media (max-width: 1000px) {
