@@ -122,7 +122,8 @@ body h4 {
   flex-direction: column;
   justify-content: flex-start;
   top: 100%;
-  left: 6.3rem;
+  left: 5.8rem;
+  margin-top: 4px;
 }
 
 .route {
@@ -151,7 +152,7 @@ body h4 {
 
 @media (max-width: 1300px) {
   .routes {
-    left: 6.8rem;
+    left: 6.3rem;
     transition: all 0.5s 1s ease-out;
   }
 
