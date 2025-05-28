@@ -22,7 +22,7 @@ body a:hover {
 }
 
 body h2 {
-  font-family: Bebas, Helvetica, sans-serif;
+  font-family: Bebas, Bebas Neue, Helvetica, sans-serif;
   font-size: clamp(3.5rem, 4.5vw, 5rem);
   align-items: center;
   color: #240900;
@@ -250,6 +250,12 @@ footer h4 {
   font-style: normal;
 }
 
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 @media (max-width: 1150px) {
   .credits-section {
     width: 100%;
@@ -340,6 +346,7 @@ footer h4 {
 
 @media (max-width: 500px) {
   .footer {
-    position: relative;
+    position: absolute;
+    font-size: 0.5rem;
   }
 }
