@@ -60,7 +60,7 @@ body a:hover {
 }
 
 .title {
-  font-family: Bebas, Helvetica, sans-serif;
+  font-family: 'Bebas', 'Bebas Neue', Helvetica, sans-serif;
   font-size: 160px;
   align-items: center;
   color: #f4efeb;
@@ -96,31 +96,25 @@ body a:hover {
 .typing-container input[type="text"],
 .typing-container textarea {
   width: 35%;
+  border: none;
+  outline: none;
+  padding: 0.5rem 0;
+  background-color: transparent;
+  color: #282828;
 }
 
 .typing-container input[type="text"],
 .typing-container input[type="email"] {
-  border: none;
-  border-bottom: 1.5px solid #282828;
-  outline: none;
-  font-size: 1rem;
-  padding: 0.5rem 0;
-  background-color: transparent;
-  color: #282828;
   text-transform: uppercase;
+  border-bottom: 1.5px solid #282828;
+  font-size: 1rem;
   font-family: "Arial Narrow", Arial, sans-serif;
 }
 
 .typing-container textarea {
   height: 150px;
-  resize: none;
-  outline: none;
   font-size: 2rem;
   line-height: 2rem;
-  padding: 0.5rem 0;
-  border: none;
-  background-color: transparent;
-  color: #282828;
   caret-color: #282828;
   font-family: "Arial Narrow", Arial, sans-serif;
 }
@@ -193,12 +187,17 @@ footer h4 {
 }
 
 @font-face {
-  font-family: Bebas;
-  src: url("../bebasneuepro-bold.woff2") format("woff2"),
-       url("../bebasneuepro-bold.woff") format("woff"),
-       url("../bebasneuepro-bold.otf") format("opentype");
-  font-display: swap;
+  font-family: 'Bebas';
+  src: url('https://narrowmarginquarterly.com/bebasneuepro-bold.woff2') format('woff2'),
+       url('https://narrowmarginquarterly.com/bebasneuepro-bold.woff') format('woff');
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.bebas-neue-regular {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -227,12 +226,6 @@ footer h4 {
   }
 
   .typing-container textarea {
-    outline: none;
     font-size: 1rem;
-    padding: 0.5rem 0;
-    background-color: transparent;
-    color: #282828;
-    text-transform: uppercase;
-    font-family: "Arial Narrow", Arial, sans-serif;
   }
 }

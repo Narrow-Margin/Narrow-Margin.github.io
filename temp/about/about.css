@@ -60,7 +60,7 @@ body a:hover {
 }
 
 .title {
-  font-family: Bebas, Helvetica, sans-serif;
+  font-family: 'Bebas', 'Bebas Neue', Helvetica, sans-serif;
   font-size: 160px;
   align-items: center;
   color: #f4efeb;
@@ -180,12 +180,17 @@ footer h4 {
 }
 
 @font-face {
-  font-family: Bebas;
-  src: url("../bebasneuepro-bold.woff2") format("woff2"),
-       url("../bebasneuepro-bold.woff") format("woff"),
-       url("../bebasneuepro-bold.otf") format("opentype");
-  font-display: swap;
+  font-family: 'Bebas';
+  src: url('https://narrowmarginquarterly.com/bebasneuepro-bold.woff2') format('woff2'),
+       url('https://narrowmarginquarterly.com/bebasneuepro-bold.woff') format('woff');
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.bebas-neue-regular {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -207,35 +212,38 @@ footer h4 {
 
 @media (max-width: 783px) {
   .info {
-    flex-direction: column; /* Stack quote and block vertically */
-    align-items: stretch; /* Center align items */
+    flex-direction: column;
+    align-items: stretch;
     margin-top: 9rem;
+    padding: 0 5px;
+    max-width: 97%;
   }
 
   .quote,
   .block {
-    max-width: 95%; /* Allow full width for smaller screens */
-    text-align: center; /* Center align text for smaller screens */
+    text-align: left;
     padding: 0;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 
-  .words {
-    float: left;
-  }
+  .quote {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+    box-sizing: border-box;
 
-  .film {
-    float: right;
   }
 
   .block {
+    width: 100%;
+    max-width: 100%;
     text-align: justify;
     text-justify: inter-word;
     overflow-wrap: break-word;
-    box-sizing: border-box;
     align-content: center;
-    margin: 0 auto;
   }
 
   .banner {
@@ -263,7 +271,8 @@ footer h4 {
   }
 
   .footer {
-    position: relative;
+    position: absolute;
+    font-size: 0.5rem;
   }
 
   .quote {
