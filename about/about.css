@@ -61,6 +61,7 @@ body a:hover {
 
 .title {
   font-family: 'Bebas', 'Bebas Neue', Helvetica, sans-serif;
+  font-weight: 100;
   font-size: 160px;
   align-items: center;
   color: #f4efeb;
