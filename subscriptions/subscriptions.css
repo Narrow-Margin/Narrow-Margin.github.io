@@ -59,7 +59,7 @@ body a:hover {
 }
 
 .title {
-  font-family: Bebas, Bebas Neue, Helvetica, sans-serif;
+  font-family: 'Bebas', 'Bebas Neue', sans-serif;
   font-size: 160px;
   align-items: center;
   color: #f4efeb;
@@ -169,17 +169,16 @@ footer {
 }
 
 @font-face {
-  font-family: Bebas;
-  src: url("../bebasneuepro-bold.woff2") format("woff2"),
-       url("../bebasneuepro-bold.woff") format("woff"),
-       url("../bebasneuepro-bold.otf") format("opentype");
-  font-display: swap;
+  font-family: 'Bebas';
+  src: url('https://narrowmarginquarterly.com/bebasneuepro-bold.woff2') format('woff2'),
+       url('https://narrowmarginquarterly.com/bebasneuepro-bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 .bebas-neue-regular {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
