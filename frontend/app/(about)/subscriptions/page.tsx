@@ -3,15 +3,11 @@
 import { useState, useRef } from "react";
 import Banner from "../../components/banner/banner";
 
-export default function ContactPage() {
-  const [name, setName] = useState("");
+export default function SubscriptionsPage() {
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
   const submitButtonRef = useRef<HTMLButtonElement>(null);
 
-  const isFormValid = name.trim() !== "" && 
-                     email.trim() !== "" && 
-                     message.trim() !== "";
+  const isFormValid = email.trim() !== "";
 
   return (
     <div>
@@ -19,26 +15,8 @@ export default function ContactPage() {
 
       <div className="w-[65%] lg:w-[35%] mx-auto sm:text-2xl mt-[50vh] transform -translate-y-[45%] flex flex-col items-center gap-4 text-center transition-all duration-1000 ease-in-out font-family:Arial Narrow, Arial, sans-serif">
         <form action="https://formsubmit.co/narrowmarginquarterly@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="Contact submission!" />
-          <textarea
-              name="Message"
-              required
-              autoFocus
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="w-full outline-none text-4xl p-2 bg-transparent resize-none h-[150px] leading-8 mb-4"
-            />
-            
-          <input
-              type="text"
-              name="Name"
-              placeholder="Name"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full outline-none uppercase text-base bg-transparent border-b-[1.5px] border-[#282828] mb-4 py-2"
-          />
-            
+          <h4>Enter your email below to be notified when our issue launches.</h4>
+          <input type="hidden" name="_subject" value="New Subscriber!" />
           <input
               type="email"
               name="Email"
@@ -48,7 +26,6 @@ export default function ContactPage() {
               onChange={(e) => setEmail(e.target.value)}
               className="w-full outline-none uppercase text-base bg-transparent border-b-[1.5px] border-[#282828] mb-8 py-2"
           />
-
           <button 
               type="submit" 
               ref={submitButtonRef}

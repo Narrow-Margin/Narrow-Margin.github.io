@@ -1,55 +1,30 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import styles from "./banner.module.css";
+import { Contributor } from "../../types";
+import CreditColumn from "./creditColumn";
 
 interface CreditProps {
-  editorial_by: string;
-  writers: string[];
-  staff: string[];
+  editorial_by: Contributor;
+  writers: Contributor[];
   thanks: string[];
+  staff: string[];
+  issue: string;
 }
 
 const Credits: React.FC<CreditProps> = ({
   editorial_by,
   writers,
-  staff,
   thanks,
+  staff,  
+  issue,
 }) => {
   return (
-    <div className={styles.credits}>
-      <div className={styles.creditItem}>
-        <h3>issue editorial</h3>
-        <p>{editorial_by}</p>
-      </div>
-
-      <div className={styles.creditItem}>
-        <h3>contributing writers</h3>
-        <ul>
-          {writers.map((writer: string) => (
-            <li key={writer}>{writer}</li>
-          ))}
-        </ul>
-      </div>
-
-      <div className={styles.creditItem}>
-        <h3>contributing staff</h3>
-        <ul>
-          {staff.map((staff: string) => (
-            <li key={staff}>{staff}</li>
-          ))}
-        </ul>
-      </div>
-
-      <div className={styles.creditItem}>
-        <h3>special thanks</h3>
-        <ul>
-          {thanks.map((thanks: string) => (
-            <li key={thanks}>{thanks}</li>
-          ))}
-        </ul>
-      </div>
+    <div className="flex flex-wrap pb-4 pt-2 justify-between w-[80%] sm:w-[94%] md:w-[94%] lg:w-[100%] lg:m-auto lg:gap-[0.5rem] xl:w-[57%] xl:pb-5 xl:pt-5 xl:gap-[2rem] xl:my-8 xl:ml-auto">
+      <CreditColumn title="issue editorial" path={`/${issue}/editorial`} children={[editorial_by.name]} />
+      <CreditColumn title="contributing writers" path="/contributor" children={writers} />
+      <CreditColumn title="contributing staff" path="/contributor" children={staff} />
+      <CreditColumn title="special thanks" path="none" children={thanks} />
     </div>
   );
 };

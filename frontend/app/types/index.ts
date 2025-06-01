@@ -16,6 +16,11 @@ export interface Article {
   path: string;
 }
 
+export interface Contributor {
+  name: string;
+  path: string;
+}
+
 export interface Filmmaker {
   id: string;
   name: string;

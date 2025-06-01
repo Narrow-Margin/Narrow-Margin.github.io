@@ -48,7 +48,6 @@ a {
   font-family: 'Bebas';
   src: url('../public/fonts/bebasneuepro-bold.woff2') format('woff2'),
        url('../public/fonts/bebasneuepro-bold.woff') format('woff'),
-       url('../public/fonts/bebasneuepro-bold.ttf') format('truetype'),
        url('../public/fonts/bebasneuepro-bold.otf') format('opentype');
   font-style: normal;
   font-display: swap; /* Prevents invisible text while loading */
