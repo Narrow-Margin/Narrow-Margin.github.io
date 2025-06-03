@@ -5,7 +5,7 @@
 }
 
 body {
-  height: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   font-family: "Arial Narrow", Arial, sans-serif;
@@ -148,18 +148,29 @@ body a:hover {
   text-decoration: underline;
 }
 
+/* Page wrapper for sticky footer */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  flex: 1;
+  padding-bottom: 2rem;
+}
+
 /* Footer */
 footer {
   width: 97%;
-  bottom: 15px;
-  position: absolute;
-  margin-top: clamp(3rem, 4vw, 5rem);
+  margin: 0 auto;
+  margin-top: auto;
+  margin-bottom: 15px;
   border-bottom: 1.5px solid #000;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
 }
 
 footer h4 {
@@ -271,9 +282,13 @@ footer h4 {
     margin-top: 7.5rem;
   }
 
-  .footer {
-    position: absolute;
-    font-size: 0.5rem;
+  footer {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+  }
+
+  footer h4 {
+    font-size: 0.8rem;
   }
 
   .quote {

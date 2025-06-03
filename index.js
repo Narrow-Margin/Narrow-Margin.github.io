@@ -42,6 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Prevent animation if already animating
     if (isAnimating) return;
     
+    // Debug log
+    console.log('Scroll position:', scrollPosition, 'Last position:', lastScrollPosition);
+    
     // Only trigger if we've actually crossed the threshold
     if ((scrollPosition > 0 && lastScrollPosition === 0) || (scrollPosition === 0 && lastScrollPosition > 0)) {
       isAnimating = true;
@@ -50,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const currentScroll = window.scrollY;
 
       if (scrollPosition > 0) {
+        console.log('Scrolling down - showing site index');
         // Hide down arrow
         downArrow.style.opacity = "0";
         downArrow.style.transition = "opacity 0.6s ease-in-out";
@@ -83,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }, 600); // Match the CSS transition duration
         }, 600); // Match the CSS transition duration
       } else {
+        console.log('Scrolling up - showing quarterly issues');
         // Show down arrow
         downArrow.style.opacity = "1";
         downArrow.style.transition = "opacity 2s ease-in-out";
@@ -95,10 +100,10 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
           navigationHeader.textContent = "quarterly issues";
           const ogRoutes = `
-            <div class="route">
-              <h4 class="route-num">01 &nbsp; &nbsp; </h4>
+            <a class="route" href="/01">
+              <h4 class="route-num">01 &nbsp; &nbsp;</h4>
               <h4 class="route-title">August, &nbsp;2025</h4>
-            </div>
+            </a>
           `;
           routes.innerHTML = ogRoutes;
 
@@ -127,13 +132,21 @@ document.addEventListener("DOMContentLoaded", function () {
     lastScrollPosition = scrollPosition;
   }
 
-  // Debounced scroll handler to prevent excessive calls
-  let scrollTimeout;
+  // Use requestAnimationFrame for smoother scroll detection
+  let ticking = false;
   function handleScroll() {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(updateContentOnScroll, 10);
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        updateContentOnScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
   }
 
   // Attach the scroll event listener
   window.addEventListener("scroll", handleScroll);
+  
+  // Also check on initial load
+  updateContentOnScroll();
 });
