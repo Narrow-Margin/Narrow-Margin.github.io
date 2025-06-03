@@ -156,17 +156,28 @@ a:visited {
   visibility: visible;
 }
 
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  flex: 1;
+  padding-bottom: 2rem;
+}
+
+/* Footer */
 footer {
-  width: 95%;
-  bottom: 15px;
-  position: absolute;
-  margin-top: clamp(3rem, 4vw, 5rem);
+  width: 97%;
+  margin: 0 auto;
+  margin-top: auto;
+  margin-bottom: 15px;
   border-bottom: 1.5px solid #000;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
 }
 
 footer h4 {
@@ -222,8 +233,12 @@ footer h4 {
 }
 
 @media (max-width: 500px) {
-  .footer {
-    position: relative;
+  footer {
+    font-size: 0.8rem;
+  }
+
+  footer h4 {
+    font-size: 0.8rem;
   }
 
   .typing-container textarea {

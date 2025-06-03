@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => {
     downArrow.style.opacity = "1";
     downArrow.style.transition = "opacity 1.5s ease-in-out";
-  }, 3000);
+  }, 2300);
 
   // Define the content to replace on scroll
   const newHeaderContent = "site index";
