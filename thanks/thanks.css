@@ -102,6 +102,7 @@
   font-size: clamp(1rem, 1.2vw, 1.2rem);
   font-family: "Arial Narrow", Arial, sans-serif;
   text-transform: uppercase;
+  background-color: transparent;
   font-weight: bold;
   color: #240900;
   border: none;
