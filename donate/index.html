@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../images/favicon.png" />
+    <title>Narrow Margin - Donate</title>
+    <link rel="preload" href="https://narrowmarginquarterly.com/bebasneuepro-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <a href="/">
+      <div class="banner">
+        <h1 class="title">Donate</h1>
+      </div>
+    </a>
+
+    <div class="page-wrapper">
+        <div class="content-wrapper">
+            <h4>We are fully independent, volunteer-run, and sustained by the 
+                dedication of our team and the support of those who appreciate what we do. 
+                If you can, please consider donating—any contribution makes a big difference.
+            </h4>
+            <div class="kofi-widget-container">
+                <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+                <script>
+                  kofiWidgetOverlay.draw('narrowmargin', {
+                    'type': 'floating-chat',
+                    'floating-chat.donateButton.text': 'Donate',
+                    'floating-chat.donateButton.background-color': '#240900',
+                    'floating-chat.donateButton.text-color': '#f4efeb',
+                  });
+                </script>
+                <style>
+                    .floatingchat-container-wrap { 
+                        position: absolute;
+                        left: 51%;
+                        transform: translateX(-50%);
+                        bottom: 5%;
+                    }
+                    .floating-chat-kofi-popup-iframe {
+                        position: absolute;
+                        left: 50%;
+                        bottom: 11%;
+                        transform: translateX(-50%);
+                    }
+
+                    @media (max-width: 700px) { 
+                        .floatingchat-container-wrap { 
+                        left: 54%;
+                        transform: translateX(-50%);
+                        bottom: 5%;
+                    }
+                    .floating-chat-kofi-popup-iframe {
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: 11%;
+                    }
+                }
+                </style>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
