@@ -37,6 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
           <h4 class="route-title">Subscriptions</h4>
         </a>
       </div>
+      <div class="route">
+        <a class="route" href="/donate">
+          <h4 class="route-num">04 &nbsp; &nbsp; </h4>
+          <h4 class="route-title">Donate</h4>
+        </a>
+      </div>
     </div>
   `;
 
