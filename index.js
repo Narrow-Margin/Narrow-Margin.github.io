@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const navigationHeader = document.querySelector(".header");
+  const issueImage = document.querySelector('.issue-image-container');
   let routes = document.querySelector(".routes");
   let downArrow = document.querySelector(".down-arrow");
   let isAnimating = false;
@@ -51,68 +52,76 @@ document.addEventListener("DOMContentLoaded", function () {
     isAnimating = true;
     
     if (currentSection === 0) {
-      // Scrolling down to show site index
-      downArrow.style.opacity = "0";
-      navigationHeader.classList.add("fade-out");
-      routes.classList.add("slide-out");
-  
-      setTimeout(() => {
-        navigationHeader.textContent = newHeaderContent;
-        routes.innerHTML = newListedItemContent;
-        
-        // Force reflow to ensure classes are applied
-        void routes.offsetWidth;
-        
-        navigationHeader.classList.remove("fade-out");
-        navigationHeader.classList.add("fade-in");
-        routes.classList.remove("slide-out");
-        routes.classList.add("slide-in");
-        
-        currentSection = 1;
-        
-        // Reset animation state after transition
+        // Scrolling down to show site index
+        downArrow.style.opacity = "0";
+        navigationHeader.classList.add("fade-out");
+        issueImage.classList.add("fade-out");
+        routes.classList.add("slide-out");
+    
         setTimeout(() => {
-          navigationHeader.classList.remove("fade-in");
-          routes.classList.remove("slide-in");
-          isAnimating = false;
+            navigationHeader.textContent = newHeaderContent;
+            routes.innerHTML = newListedItemContent;
+            
+            // Force reflow to ensure classes are applied
+            void routes.offsetWidth;
+            
+            navigationHeader.classList.remove("fade-out");
+            navigationHeader.classList.add("fade-in");
+            routes.classList.remove("slide-out");
+            routes.classList.add("slide-in");
+            
+            currentSection = 1;
+            
+            // Reset animation state after transition
+            setTimeout(() => {
+                navigationHeader.classList.remove("fade-in");
+                routes.classList.remove("slide-in");
+                isAnimating = false;
+            }, 600);
         }, 600);
-      }, 600);
     } else {
-      // Scrolling up to show quarterly issues
-      setTimeout(() => {
-        downArrow.style.opacity = "1";
-      }, 2300); 
-      navigationHeader.classList.add("fade-out");
-      routes.classList.add("slide-out");
-  
-      setTimeout(() => {
-        navigationHeader.textContent = "quarterly issues";
-        routes.innerHTML = `
-          <a class="route" href="/01">
-            <h4 class="route-num">01 &nbsp; &nbsp;</h4>
-            <h4 class="route-title">August, &nbsp;2025</h4>
-          </a>
-        `;
-        
-        // Force reflow to ensure classes are applied
-        void routes.offsetWidth;
-        
-        navigationHeader.classList.remove("fade-out");
-        navigationHeader.classList.add("fade-in");
-        routes.classList.remove("slide-out");
-        routes.classList.add("slide-in");
-        
-        currentSection = 0;
-        
-        // Reset animation state after transition
+        // Scrolling up to show quarterly issues
         setTimeout(() => {
-          navigationHeader.classList.remove("fade-in");
-          routes.classList.remove("slide-in");
-          isAnimating = false;
+            downArrow.style.opacity = "1";
+        }, 2300);
+        
+        navigationHeader.classList.add("fade-out");
+        routes.classList.add("slide-out");
+        
+        // Make sure the image is visible before starting fade-in
+        issueImage.style.display = 'block';
+        void issueImage.offsetWidth; // Force reflow
+        issueImage.classList.remove("fade-out");
+        issueImage.classList.add("fade-in");
+    
+        setTimeout(() => {
+            navigationHeader.textContent = "";
+            routes.innerHTML = `
+                <a class="route" href="/01">
+                    <h4 class="route-num"></h4>
+                    <h4 class="route-title"></h4>
+                </a>
+            `;
+            
+            // Force reflow to ensure classes are applied
+            void routes.offsetWidth;
+            
+            navigationHeader.classList.remove("fade-out");
+            navigationHeader.classList.add("fade-in");
+            routes.classList.remove("slide-out");
+            routes.classList.add("slide-in");
+            
+            currentSection = 0;
+            
+            // Reset animation state after transition
+            setTimeout(() => {
+                navigationHeader.classList.remove("fade-in");
+                routes.classList.remove("slide-in");
+                isAnimating = false;
+            }, 600);
         }, 600);
-      }, 600);
     }
-  }
+}
 
   // Handle wheel event for smooth scrolling
   let isScrolling = false;
