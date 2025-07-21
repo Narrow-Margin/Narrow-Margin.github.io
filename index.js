@@ -27,20 +27,26 @@ document.addEventListener("DOMContentLoaded", function () {
         </a>
       </div>
       <div class="route">
-        <a class="route" href="/contact">
+        <a class="route" href="/01">
           <h4 class="route-num">02 &nbsp; &nbsp; </h4>
+          <h4 class="route-title">Issue</h4>
+        </a>
+      </div>
+      <div class="route">
+        <a class="route" href="/contact">
+          <h4 class="route-num">03 &nbsp; &nbsp; </h4>
           <h4 class="route-title">Contact</h4>
         </a>
       </div>
       <div class="route">
         <a class="route" href="/subscriptions">
-          <h4 class="route-num">03 &nbsp; &nbsp; </h4>
+          <h4 class="route-num">04 &nbsp; &nbsp; </h4>
           <h4 class="route-title">Subscriptions</h4>
         </a>
       </div>
       <div class="route">
         <a class="route" href="/donate">
-          <h4 class="route-num">04 &nbsp; &nbsp; </h4>
+          <h4 class="route-num">05 &nbsp; &nbsp; </h4>
           <h4 class="route-title">Donate</h4>
         </a>
       </div>
@@ -57,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         navigationHeader.classList.add("fade-out");
         issueImage.classList.add("fade-out");
         routes.classList.add("slide-out");
+        issueImage.style.pointerEvents = 'none'; // Disable clicks on the image
     
         setTimeout(() => {
             navigationHeader.textContent = newHeaderContent;
@@ -93,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
         void issueImage.offsetWidth; // Force reflow
         issueImage.classList.remove("fade-out");
         issueImage.classList.add("fade-in");
+        issueImage.style.pointerEvents = 'auto'; // Re-enable clicks on the image
     
         setTimeout(() => {
             navigationHeader.textContent = "";
